@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Web App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f5e6ca, #d4e6f1);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #3b3b3b;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #start_button {
+            background-color: #ffd1dc;
+            color: #3b3b3b;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 25px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #start_button:hover {
+            background-color: #ffc8e2;
+            transform: translateY(-3px);
+        }
+
+        #webcam {
+            width: 640px;
+            height: 480px;
+            margin-top: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        #roll_number {
+            font-size: 1.8rem;
+            margin-top: 20px;
+            color: #3b3b3b;
+            font-weight: bold;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            #webcam {
+                width: 90%;
+                height: auto;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            #start_button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            #roll_number {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Face Recognition</h1>
+    <button id="start_button">Turn On Webcam</button>
+    <video id="webcam" autoplay></video>
+    <div id="roll_number"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='webcam.js') }}"></script>
+</body>
+</html>
